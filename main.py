@@ -41,7 +41,7 @@ def main():
         try:
             Send_Mess()
         finally:
-            time.sleep(10000)
+            time.sleep(10)
 
 if __name__ == '__main__':
     main()
