@@ -11,7 +11,8 @@ load_dotenv()
 api_id = os.getenv('APIID')
 api_hash = os.getenv('TOKEN')
 app = Client('my_account', api_id, api_hash)
-cash = "3 612₽"
+cash = os.getenv('CASH')
+client = os.getenv('CLIENT')
 
 def plural_days():
     # Делаем правильное окончание слова
@@ -33,7 +34,7 @@ def days():
 
 def Send_Mess():
     # Отправляем сообщение
-    app.send_message('me', f'Привет, я бот! Мой создатель всего-лишь хотел напомнить что ты ему должен {cash}. Уже прошло {days()} {plural_days()}. Ахуеть можно')
+    app.send_message(client, f'Привет, я бот! Мой создатель всего-лишь хотел напомнить что ты ему должен {cash}. Уже прошло {days()} {plural_days()}. Ахуеть можно')
  
 def main():
     app.start()
